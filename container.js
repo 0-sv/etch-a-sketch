@@ -16,4 +16,13 @@ const createField = (l, w, container) => {
 }
 
 createField(l, w, container);
-console.log(body);
+
+const squares = document.querySelectorAll('.square');
+squares.forEach((square) => {
+    square.addEventListener('mouseover', (event) => {
+        event.target.style.background = '#000';
+        setTimeout(function() {
+            event.target.style.background = '#fff';
+          }, 500);
+    });
+});
