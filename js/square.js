@@ -8,14 +8,14 @@ const createField = (l, w, container) => {
     }
 }
 
-createField(l, w, document.getElementById('square-container'));
-
-const squares = document.querySelectorAll('.square');
-squares.forEach((square) => {
-    square.addEventListener('mouseover', (event) => {
-        event.target.style.background = '#000';
-        setTimeout(function() {
-            event.target.style.background = '#fff';
-          }, 500);
+const createDynamicSquares = () => {
+    const squares = document.querySelectorAll('.square');
+    squares.forEach((square) => {
+        square.addEventListener('mouseover', (event) => {
+            event.target.style.background = '#000';
+        });
     });
-});
+}
+
+createField(l, w, document.getElementById('square-container'));
+createDynamicSquares();
